@@ -1,0 +1,26 @@
+{
+    "name": "cweetagram/cweetagram-vonage-whatsapp",
+    "description": "This package is a package to handle cweetagram business models for whatsapp business services",
+    "type": "llibrary",
+    "autoload": {
+        "psr-4": {
+            "Cweetagram\\CweetagramVonageWhatsapp\\": "src/",
+            "Cweetagram\\CweetagramVonageWhatsapp\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Chancel",
+            "email": "cshongo33@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "spatie/laravel-data": "^4.18",
+        "illuminate/support": "^12.43"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.5",
+        "orchestra/testbench": "^10.8"
+    }
+}
