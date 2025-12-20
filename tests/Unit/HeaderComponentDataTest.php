@@ -4,6 +4,7 @@ namespace Cweetagram\CweetagramVonageWhatsapp\Tests\Unit;
 
 use Cweetagram\CweetagramVonageWhatsapp\Data\HeaderComponentData;
 use Cweetagram\CweetagramVonageWhatsapp\Enums\HeaderFormats;
+use Cweetagram\CweetagramVonageWhatsapp\Enums\TemplateComponentTypes;
 use Cweetagram\CweetagramVonageWhatsapp\Tests\TestCase;
 
 class HeaderComponentDataTest extends TestCase
@@ -13,6 +14,7 @@ class HeaderComponentDataTest extends TestCase
         $data = HeaderComponentData::text("Hello World!")->toArray();
         $this->assertEquals("Hello World!", $data["text"]);
         $this->assertEquals($data['format'], HeaderFormats::TEXT->value);
+        $this->assertEquals($data['type'], TemplateComponentTypes::HEADER->value);
     }
 
     public function testImageHeaderComponentData(): void

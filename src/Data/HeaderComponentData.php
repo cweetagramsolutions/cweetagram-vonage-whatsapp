@@ -4,6 +4,7 @@ namespace Cweetagram\CweetagramVonageWhatsapp\Data;
 
 use Cweetagram\CweetagramVonageWhatsapp\Data\Header\HeaderComponentExampleData;
 use Cweetagram\CweetagramVonageWhatsapp\Enums\HeaderFormats;
+use Cweetagram\CweetagramVonageWhatsapp\Enums\TemplateComponentTypes;
 use Spatie\LaravelData\Attributes\Validation\In;
 use Spatie\LaravelData\Attributes\Validation\Required;
 use Spatie\LaravelData\Data;
@@ -25,17 +26,17 @@ class HeaderComponentData extends Data
 
     public static function text(string $text): self
     {
-        return self::from([
-            'type' => 'HEADER',
-            'format' => HeaderFormats::TEXT->value,
-            'text' => $text,
-        ]);
+        return new self(
+            type: TemplateComponentTypes::HEADER->value,
+            format: HeaderFormats::TEXT->value,
+            text: $text,
+        );
     }
 
     public static function image(string $image): self
     {
         return new self(
-            type: 'HEADER',
+            type: TemplateComponentTypes::HEADER->value,
             format: HeaderFormats::IMAGE->value,
             example: new HeaderComponentExampleData(
                 header_handle: $image,
@@ -46,7 +47,7 @@ class HeaderComponentData extends Data
     public static function video(string $video): self
     {
         return new self(
-            type: 'HEADER',
+            type: TemplateComponentTypes::HEADER->value,
             format: HeaderFormats::VIDEO->value,
             example: new HeaderComponentExampleData(
                 header_handle: $video,
@@ -57,7 +58,7 @@ class HeaderComponentData extends Data
     public static function document(string $document): self
     {
         return new self(
-            type: 'HEADER',
+            type: TemplateComponentTypes::HEADER->value,
             format: HeaderFormats::DOCUMENT->value,
             example: new HeaderComponentExampleData(
                 header_handle: $document,
