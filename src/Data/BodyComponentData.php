@@ -9,26 +9,27 @@ use Spatie\LaravelData\Data;
 class BodyComponentData extends Data
 {
     public function __construct(
-        public string $type = "BODY",
+        public ?string $type = null,
         public string $format,
         public string $text,
-        public ?BodyComponentExampleData $example,
-        public ?array $buttons
+        public ?BodyComponentExampleData $example = null,
+        public ?array $buttons = null
 
     )
     {
 
     }
 
-    public static function body(string $body, ?string $example_body_text, array $buttons = []): self
+    public static function text(string $text, ?string $example_body_text = null, array $buttons = []): self
     {
-        return self::from([
-            'format' => 'TEXT',
-            'text' => $body,
-            'example' => new BodyComponentExampleData(
+        return new self(
+            type: 'BODY',
+            format: 'TEXT',
+            text: $text,
+            example: new BodyComponentExampleData(
                 body_text: $example_body_text
             ),
-            'buttons' => $buttons,
-        ]);
+            buttons: $buttons
+        );
     }
 }
