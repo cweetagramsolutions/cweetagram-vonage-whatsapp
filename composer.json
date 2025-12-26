@@ -1,7 +1,7 @@
 {
     "name": "cweetagram/cweetagram-vonage-whatsapp",
     "description": "This package is a package to handle cweetagram business models for whatsapp business services",
-    "type": "llibrary",
+    "type": "library",
     "autoload": {
         "psr-4": {
             "Cweetagram\\CweetagramVonageWhatsapp\\": "src/",
