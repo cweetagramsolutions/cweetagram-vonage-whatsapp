@@ -14,7 +14,7 @@
             "email": "cshongo33@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
         "spatie/laravel-data": "^4.18",
         "illuminate/support": "^12.43"
